@@ -165,7 +165,7 @@ body.dark .swipe-hint{
 /* AVATAR ON FIRST CARD */
 .avatar{
   position:absolute;
-  bottom:-26px;
+  bottom:10px;   /* was -26 */
   left:20px;
   width:56px;
   height:56px;
@@ -179,7 +179,9 @@ body.dark .swipe-hint{
   font-size:1rem;
   color:#e5e7eb;
   box-shadow:0 8px 20px rgba(15,23,42,0.55);
+  z-index:20;   /* ensure above card content */
 }
+
 body.dark .avatar{
   border-color:#020617;
 }
@@ -196,9 +198,11 @@ body.dark .avatar{
 .card-content h2{
   font-size:1.6rem;
   margin-bottom:4px;
-  white-space:nowrap;
+  white-space:normal!important;
   overflow:hidden;
+  word-break:break-word;
 }
+
 
 /* FUN FACTS SMALL HEADING */
 .subheading{
