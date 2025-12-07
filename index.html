@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:#6666ff;  /* your new background */
+  overflow:hidden;
+  font-family:Arial;
+}
+
+.card{
+  width:90vw;
+  height:80vh;
+  background:#ffffff;
+  color:#000;
+  display:flex;
+  flex-direction:column;
+  border-radius:20px;
+  position:absolute;
+  left:5vw;
+  top:10vh;
+  transition:transform .4s ease, opacity .4s ease;
+  overflow:hidden;
+}
+
+.card-img{
+  width:100%;
+  height:50%;
+  background:#d4d4d4;
+  background-size:cover;
+  background-position:center;
+}
+
+.card-content{
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.card-content h2{
+  font-size:1.5rem;
+  margin-bottom:5px;
+}
+
+.btn{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:rgba(0,0,0,0.15);
+  backdrop-filter:blur(10px);
+  font-size:1.6rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+  bottom:20px;
+  cursor:pointer;
+  transition:.25s;
+}
+.btn.left{ left:20px; }
+.btn.right{ right:20px; }
+.btn:hover{ background:rgba(0,0,0,0.3); }
+</style>
+
+</head>
+<body>
+
+
+<div id="c0" class="card">
+  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?1');"></div>
+  <div class="card-content">
+    <h2>Mohammed Rahil Azeez</h2>
+    <p>Entrepreneur, Founder & CEO of Creativals.com</p>
+  </div>
+</div>
+
+<div id="c1" class="card">
+  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?2');"></div>
+  <div class="card-content">
+    <h2>Early Life</h2>
+    <p>Born in Hyderabad, raised between Saudi Arabia & Kamareddy.</p>
+  </div>
+</div>
+
+<div id="c2" class="card">
+  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?3');"></div>
+  <div class="card-content">
+    <h2>Education</h2>
+    <p>B.Tech Mechanical (JNTUH), pursuing LLB (Osmania University)</p>
+  </div>
+</div>
+
+<div id="c3" class="card">
+  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?4');"></div>
+  <div class="card-content">
+    <h2>Creativals</h2>
+    <p>Global digital branding agency operating across 9 countries.</p>
+  </div>
+</div>
+
+<div id="c4" class="card">
+  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?5');"></div>
+  <div class="card-content">
+    <h2>Vision</h2>
+    <p>Build global businesses impacting millions.</p>
+  </div>
+</div>
+
+<!-- NEW THANK YOU CARD -->
+<div id="c5" class="card">
+  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?6');"></div>
+  <div class="card-content">
+    <h2>Thank You</h2>
+    <p>Thanks for showing interest in knowing about me 😊</p>
+  </div>
+</div>
+
+
+<script>
+let cards = [
+  document.getElementById("c0"),
+  document.getElementById("c1"),
+  document.getElementById("c2"),
+  document.getElementById("c3"),
+  document.getElementById("c4"),
+  document.getElementById("c5")   // <-- added last
+];
+
+let current = 0;
+let startX = 0;
+let currentX = 0;
+
+function updateCards(){
+  cards.forEach((c,i)=>{
+
+    c.querySelectorAll(".btn").forEach(b=>b.remove());
+
+    if(i < current){
+      c.style.transform = "translateX(-120vw)";
+      c.style.opacity = "0";
+    }
+    else if(i === current){
+      c.style.transform = "translateX(0) scale(1)";
+      c.style.opacity = "1";
+      c.style.zIndex = 10;
+
+      if(current > 0){
+        const leftBtn = document.createElement("div");
+        leftBtn.className = "btn left";
+        leftBtn.innerHTML = "&#8592;";
+        leftBtn.onclick = ()=>prevCard();
+        c.appendChild(leftBtn);
+      }
+
+      if(current < cards.length-1){
+        const rightBtn = document.createElement("div");
+        rightBtn.className = "btn right";
+        rightBtn.innerHTML = "&#8594;";
+        rightBtn.onclick = ()=>nextCard();
+        c.appendChild(rightBtn);
+      }
+
+    }
+    else{
+      let offset = (i - current) * 10;
+      let scale  = 1 - (i - current) * 0.03;
+      let opacity = 1 - (i - current) * 0.15;
+      
+      c.style.transform = `translateY(${offset}px) scale(${scale})`;
+      c.style.opacity = opacity;
+      c.style.zIndex = 5 - i;
+    }
+  });
+}
+
+function nextCard(){
+  if(current < cards.length-1){
+    current++;
+    updateCards();
+  }
+}
+
+function prevCard(){
+  if(current > 0){
+    current--;
+    updateCards();
+  }
+}
+
+// DESKTOP CLICK
+document.addEventListener("click",(e)=>{
+  if(e.target.classList.contains("btn")) return;
+  if(e.clientX < window.innerWidth/2) nextCard();
+  else prevCard();
+});
+
+// TOUCH
+document.addEventListener("touchstart",(e)=>{
+  startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove",(e)=>{
+  currentX = e.touches[0].clientX - startX;
+});
+
+document.addEventListener("touchend",(e)=>{
+  if(currentX < -50) nextCard();
+  if(currentX > 50) prevCard();
+  currentX = 0;
+});
+
+updateCards();
+</script>
+
+</body>
+</html>
