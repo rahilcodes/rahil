@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rahil.creativals</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 body{
-  background:#6666ff;  /* your new background */
+  background:#6666ff; /* your chosen background */
   overflow:hidden;
-  font-family:Arial;
+  font-family:Arial, system-ui, -apple-system, BlinkMacSystemFont;
 }
 
+/* CARD BASE */
 .card{
   width:90vw;
   height:80vh;
@@ -24,34 +31,95 @@ body{
   top:10vh;
   transition:transform .4s ease, opacity .4s ease;
   overflow:hidden;
+  box-shadow:0 16px 40px rgba(0,0,0,0.25);
 }
 
+/* TOP IMAGE / GRADIENT AREA */
 .card-img{
   width:100%;
-  height:50%;
-  background:#d4d4d4;
+  height:48%;
   background-size:cover;
   background-position:center;
 }
 
+/* CONTENT AREA */
 .card-content{
-  padding:20px;
+  padding:20px 20px 80px; /* bottom space for nav buttons */
   display:flex;
   flex-direction:column;
+  justify-content:flex-start;
   gap:10px;
 }
 
 .card-content h2{
-  font-size:1.5rem;
-  margin-bottom:5px;
+  font-size:1.6rem;
+  margin-bottom:4px;
 }
 
+.card-content p{
+  font-size:0.95rem;
+  line-height:1.4rem;
+}
+
+/* TAGLINE */
+.tagline{
+  font-size:0.9rem;
+  color:#555;
+}
+
+/* BULLETS */
+ul{
+  padding-left:18px;
+  font-size:0.92rem;
+  line-height:1.4rem;
+}
+ul li{
+  margin-bottom:4px;
+}
+
+/* CTA BUTTONS */
+.cta-row{
+  margin-top:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.btn-cta{
+  padding:8px 16px;
+  border-radius:999px;
+  border:none;
+  font-size:0.9rem;
+  cursor:pointer;
+  transition:transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  white-space:nowrap;
+}
+
+.btn-primary{
+  background:#6666ff;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(102,102,255,0.55);
+}
+.btn-primary:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 26px rgba(102,102,255,0.7);
+}
+
+.btn-ghost{
+  background:transparent;
+  color:#333;
+  border:1px solid rgba(0,0,0,0.15);
+}
+.btn-ghost:hover{
+  background:rgba(0,0,0,0.03);
+}
+
+/* CORNER NAV ARROWS */
 .btn{
   width:50px;
   height:50px;
   border-radius:50%;
   background:rgba(0,0,0,0.15);
-  backdrop-filter:blur(10px);
   font-size:1.6rem;
   display:flex;
   justify-content:center;
@@ -63,91 +131,284 @@ body{
 }
 .btn.left{ left:20px; }
 .btn.right{ right:20px; }
-.btn:hover{ background:rgba(0,0,0,0.3); }
-</style>
+.btn:hover{
+  background:rgba(0,0,0,0.3);
+  color:#fff;
+}
 
+/* SMALL LABEL / CHIP */
+.chip{
+  display:inline-block;
+  padding:3px 9px;
+  border-radius:999px;
+  font-size:0.75rem;
+  background:rgba(0,0,0,0.05);
+  color:#444;
+  margin-bottom:4px;
+}
+</style>
 </head>
 <body>
 
-
+<!-- CARD 0 – YOU / FOUNDER -->
 <div id="c0" class="card">
-  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?1');"></div>
+  <div class="card-img" style="background:linear-gradient(135deg,#ff7fd2,#ff3fad);"></div>
   <div class="card-content">
+    <span class="chip">Founder • CEO • Strategist</span>
     <h2>Mohammed Rahil Azeez</h2>
-    <p>Entrepreneur, Founder & CEO of Creativals.com</p>
+    <p class="tagline">Digital growth partner for global brands.</p>
+    <p>
+      I’m the Founder & CEO of <b>Creativals</b>, a global branding & digital agency
+      built with my siblings and closest friends. I focus on vision, systems,
+      and high-level strategy while my team executes with speed and precision.
+    </p>
+    <ul>
+      <li>Entrepreneur • Business Strategist • Agency Operator</li>
+      <li>Built a million-dollar agency serving brands across continents</li>
+      <li>Belief: systems & operations scale businesses, not just ideas</li>
+    </ul>
+    <div class="cta-row">
+      <button class="btn-cta btn-primary" onclick="goToCard(2)">See what we do</button>
+      <button class="btn-cta btn-ghost" onclick="goToCard(8)">Contact me</button>
+    </div>
   </div>
 </div>
 
+<!-- CARD 1 – CREATIVALS INTRO -->
 <div id="c1" class="card">
-  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?2');"></div>
+  <div class="card-img" style="background:linear-gradient(135deg,#7f7fff,#4f4fff);"></div>
   <div class="card-content">
-    <h2>Early Life</h2>
-    <p>Born in Hyderabad, raised between Saudi Arabia & Kamareddy.</p>
+    <span class="chip">Agency Overview</span>
+    <h2>Welcome to Creativals</h2>
+    <p class="tagline">We don’t just design brands. We build growth systems.</p>
+    <p>
+      Creativals is a global branding & digital growth agency helping businesses
+      move from “just another brand” to a <b>scalable, system-driven business</b>.
+      From identity to execution, we align every piece to revenue and reputation.
+    </p>
+    <ul>
+      <li>300+ clients served in 3 years</li>
+      <li>Operating across 9+ countries</li>
+      <li>Family-led core team, global workflows</li>
+    </ul>
   </div>
 </div>
 
+<!-- CARD 2 – SERVICES / WHAT WE DO -->
 <div id="c2" class="card">
-  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?3');"></div>
+  <div class="card-img" style="background:linear-gradient(135deg,#6affa1,#3edd72);"></div>
   <div class="card-content">
-    <h2>Education</h2>
-    <p>B.Tech Mechanical (JNTUH), pursuing LLB (Osmania University)</p>
+    <span class="chip">Services</span>
+    <h2>What We Do at Creativals</h2>
+    <p>
+      We build brands, funnels and systems designed for <b>scale</b>. Everything is
+      connected: brand, marketing, operations & automation.
+    </p>
+    <ul>
+      <li>Brand Strategy, Positioning & Visual Identity</li>
+      <li>Websites, Landing Pages & Conversion Funnels</li>
+      <li>Performance Marketing & Growth Campaigns</li>
+      <li>AI Agents, Automations & Business Systems</li>
+    </ul>
+    <div class="cta-row">
+      <button class="btn-cta btn-primary" onclick="goToCard(5)">See our clients</button>
+      <button class="btn-cta btn-ghost" onclick="goToCard(3)">View countries we serve</button>
+    </div>
   </div>
 </div>
 
+<!-- CARD 3 – COUNTRIES WE SERVE -->
 <div id="c3" class="card">
-  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?4');"></div>
+  <div class="card-img" style="background:linear-gradient(135deg,#ffa16a,#ff7534);"></div>
   <div class="card-content">
-    <h2>Creativals</h2>
-    <p>Global digital branding agency operating across 9 countries.</p>
+    <span class="chip">Global Presence</span>
+    <h2>Countries We Serve</h2>
+    <p>
+      Creativals operates as a remote-first global agency. Our core team is
+      based in India, serving founders and teams across:
+    </p>
+    <ul>
+      <li>🇺🇸 USA & 🇨🇦 Canada</li>
+      <li>🇬🇧 UK & 🇦🇺 Australia</li>
+      <li>🇦🇪 UAE & 🇲🇾 Malaysia</li>
+      <li>🇬🇾 Guyana & 🇮🇳 India</li>
+    </ul>
+    <p>
+      Time zones don’t limit us. Our systems allow us to collaborate smoothly
+      with teams across continents.
+    </p>
   </div>
 </div>
 
+<!-- CARD 4 – INDUSTRIES -->
 <div id="c4" class="card">
-  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?5');"></div>
+  <div class="card-img" style="background:linear-gradient(135deg,#9d6aff,#742fff);"></div>
   <div class="card-content">
-    <h2>Vision</h2>
-    <p>Build global businesses impacting millions.</p>
+    <span class="chip">Industries</span>
+    <h2>Who We Work With</h2>
+    <p>
+      We partner with founders, startups and growing brands in:
+    </p>
+    <ul>
+      <li>Technology, SaaS & Digital Products</li>
+      <li>E-commerce & D2C Brands</li>
+      <li>Education, Coaching & Online Academies</li>
+      <li>Healthcare & Wellness</li>
+      <li>Real Estate, Agencies & Professional Services</li>
+    </ul>
+    <p>
+      Whether you’re early-stage or scaling, we focus on <b>clarity, systems and
+      revenue-focused branding</b>.
+    </p>
   </div>
 </div>
 
-<!-- NEW THANK YOU CARD -->
+<!-- CARD 5 – CLIENTS & MINI CASE STUDY -->
 <div id="c5" class="card">
-  <div class="card-img" style="background-image:url('https://picsum.photos/500/300?6');"></div>
+  <div class="card-img" style="background:linear-gradient(135deg,#6affff,#33c8c8);"></div>
   <div class="card-content">
-    <h2>Thank You</h2>
-    <p>Thanks for showing interest in knowing about me 😊</p>
+    <span class="chip">Clients & Results</span>
+    <h2>300+ Clients, Real Outcomes</h2>
+    <p>
+      Creativals has worked with 300+ brands in just 3 years. Here’s the kind of
+      impact we focus on:
+    </p>
+    <ul>
+      <li>Rebranding a service business → 3× leads in 90 days</li>
+      <li>Fixing funnels for a coaching brand → 40% higher conversions</li>
+      <li>Setting up automations → 60% less manual follow-up work</li>
+    </ul>
+    <p>
+      Every project is built around one question: <b>“How does this move the
+      business forward?”</b>
+    </p>
   </div>
 </div>
 
+<!-- CARD 6 – WHY CREATIVALS / WHY BRANDS FAIL -->
+<div id="c6" class="card">
+  <div class="card-img" style="background:linear-gradient(135deg,#faff6a,#d4c838);"></div>
+  <div class="card-content">
+    <span class="chip">Strategy</span>
+    <h2>Why Brands Fail & How We Fix It</h2>
+    <p>
+      Most brands don’t fail because of bad design. They fail because:
+    </p>
+    <ul>
+      <li>No clear positioning or message</li>
+      <li>Random marketing without systems</li>
+      <li>Inconsistent brand experience</li>
+      <li>No follow-up or automation</li>
+    </ul>
+    <p>
+      At Creativals, we:
+    </p>
+    <ul>
+      <li>Define your core brand story & positioning</li>
+      <li>Build systems, not one-time campaigns</li>
+      <li>Focus on operations, funnels & delivery</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CARD 7 – AI & SYSTEMS FOCUS -->
+<div id="c7" class="card">
+  <div class="card-img" style="background:linear-gradient(135deg,#ff9fff,#ff66ff);"></div>
+  <div class="card-content">
+    <span class="chip">AI • Automation • Systems</span>
+    <h2>AI-Powered, System-Driven</h2>
+    <p>
+      My core strength is thinking in <b>systems</b>. We use AI & automation to
+      reduce chaos, increase consistency, and free your team’s time.
+    </p>
+    <ul>
+      <li>AI agents for support, lead-qualifying & workflows</li>
+      <li>Automated funnels & follow-up sequences</li>
+      <li>Dashboards to track leads, conversion & performance</li>
+    </ul>
+    <p>
+      This is how we go beyond “design” and actually help <b>scale operations</b>.
+    </p>
+  </div>
+</div>
+
+<!-- CARD 8 – CONTACT / WORK WITH US -->
+<div id="c8" class="card">
+  <div class="card-img" style="background:linear-gradient(135deg,#6aa2ff,#3f7fff);"></div>
+  <div class="card-content">
+    <span class="chip">Let’s Work Together</span>
+    <h2>Work With Rahil & Creativals</h2>
+    <p>
+      If you’re a founder, CEO or marketer serious about growth, let’s talk.
+    </p>
+    <p>
+      <b>Email:</b> rahil@creativals.com<br>
+      <b>Instagram:</b> @mohammedrahilazeez
+    </p>
+    <p style="font-size:0.85rem;color:#555;">
+      Replace the WhatsApp link below with your real number in the code when you deploy.
+    </p>
+    <div class="cta-row">
+      <!-- Replace Xs with your actual full international number -->
+      <button class="btn-cta btn-primary"
+        onclick="window.open('https://wa.me/91XXXXXXXXXX?text=Hi%20Rahil,%20I%20want%20to%20grow%20my%20brand%20with%20Creativals','_blank')">
+        Message on WhatsApp
+      </button>
+      <button class="btn-cta btn-ghost" onclick="window.open('mailto:rahil@creativals.com','_blank')">
+        Email Rahil
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- CARD 9 – THANK YOU / CLOSING -->
+<div id="c9" class="card">
+  <div class="card-img" style="background:linear-gradient(135deg,#ff6aff,#ff2fff);"></div>
+  <div class="card-content">
+    <span class="chip">Thank You</span>
+    <h2>Thanks for Exploring Creativals</h2>
+    <p>
+      Thank you for showing interest in my journey and in Creativals. I want to
+      be remembered as a voice that stood strong in chaos, and a <b>visionary
+      achiever</b> who built global systems while staying simple & grounded.
+    </p>
+    <p>
+      If our way of thinking resonates with you, I’d love to explore how we can
+      build something meaningful together.
+    </p>
+    <div class="cta-row">
+      <button class="btn-cta btn-primary" onclick="goToCard(8)">Start a conversation</button>
+      <button class="btn-cta btn-ghost" onclick="goToCard(0)">Back to first card</button>
+    </div>
+  </div>
+</div>
 
 <script>
-let cards = [
-  document.getElementById("c0"),
-  document.getElementById("c1"),
-  document.getElementById("c2"),
-  document.getElementById("c3"),
-  document.getElementById("c4"),
-  document.getElementById("c5")   // <-- added last
-];
+/* COLLECT CARDS */
+let cards = [...Array(10)].map((_,i)=>document.getElementById("c"+i));
 
 let current = 0;
 let startX = 0;
 let currentX = 0;
 
+/* MAIN RENDER FUNCTION */
 function updateCards(){
   cards.forEach((c,i)=>{
-
+    // remove nav arrows if they exist
     c.querySelectorAll(".btn").forEach(b=>b.remove());
 
     if(i < current){
+      // cards that are already passed
       c.style.transform = "translateX(-120vw)";
       c.style.opacity = "0";
     }
     else if(i === current){
+      // active card
       c.style.transform = "translateX(0) scale(1)";
       c.style.opacity = "1";
       c.style.zIndex = 10;
 
+      // left arrow (not on first card)
       if(current > 0){
         const leftBtn = document.createElement("div");
         leftBtn.className = "btn left";
@@ -156,6 +417,7 @@ function updateCards(){
         c.appendChild(leftBtn);
       }
 
+      // right arrow (not on last card)
       if(current < cards.length-1){
         const rightBtn = document.createElement("div");
         rightBtn.className = "btn right";
@@ -164,12 +426,12 @@ function updateCards(){
         c.appendChild(rightBtn);
       }
 
-    }
-    else{
+    } else {
+      // cards ahead (stacked, slightly lower / smaller / faded)
       let offset = (i - current) * 10;
       let scale  = 1 - (i - current) * 0.03;
       let opacity = 1 - (i - current) * 0.15;
-      
+
       c.style.transform = `translateY(${offset}px) scale(${scale})`;
       c.style.opacity = opacity;
       c.style.zIndex = 5 - i;
@@ -177,6 +439,15 @@ function updateCards(){
   });
 }
 
+/* NAV HELPERS FOR INTERNAL CTA BUTTONS */
+function goToCard(index){
+  if(index >= 0 && index < cards.length){
+    current = index;
+    updateCards();
+  }
+}
+
+/* NEXT / PREV CARD */
 function nextCard(){
   if(current < cards.length-1){
     current++;
@@ -191,28 +462,32 @@ function prevCard(){
   }
 }
 
-// DESKTOP CLICK
+/* DESKTOP CLICK (LEFT / RIGHT SIDE) */
 document.addEventListener("click",(e)=>{
-  if(e.target.classList.contains("btn")) return;
+  // ignore clicks on CTA buttons and arrows
+  if(
+    e.target.classList.contains("btn") ||
+    e.target.classList.contains("btn-cta")
+  ) return;
+
   if(e.clientX < window.innerWidth/2) nextCard();
   else prevCard();
 });
 
-// TOUCH
+/* TOUCH SWIPE */
 document.addEventListener("touchstart",(e)=>{
   startX = e.touches[0].clientX;
 });
-
 document.addEventListener("touchmove",(e)=>{
   currentX = e.touches[0].clientX - startX;
 });
-
 document.addEventListener("touchend",(e)=>{
   if(currentX < -50) nextCard();
   if(currentX > 50) prevCard();
   currentX = 0;
 });
 
+/* INITIAL RENDER */
 updateCards();
 </script>
 
