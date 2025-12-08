@@ -821,7 +821,11 @@ document.addEventListener("touchend",(e)=>{
 
 function resetCard(){
   cards[current].style.transition = "transform .3s ease";
-  cards[current].style.transform = "translateX(0)";
+  cards[current].style.transform = "translateX(0) scale(1.02)";
+setTimeout(()=>{
+ cards[current].style.transform = "translateX(0) scale(1)";
+},180);
+
 }
 
 
