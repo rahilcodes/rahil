@@ -155,17 +155,15 @@ body.dark .swipe-hint{
 
 /* TOP IMAGE / GRADIENT AREA */
 .card-img{
-  width:100%;
-  height:48%;
-  background-size:cover;
-  background-position:center;
   position:relative;
+  overflow:visible!important;
 }
+
 
 /* AVATAR ON FIRST CARD */
 .avatar{
   position:absolute;
-  bottom:10px;   /* was -26 */
+  bottom:-28px;  /* moves it into content visually */
   left:20px;
   width:56px;
   height:56px;
@@ -179,8 +177,10 @@ body.dark .swipe-hint{
   font-size:1rem;
   color:#e5e7eb;
   box-shadow:0 8px 20px rgba(15,23,42,0.55);
-  z-index:20;   /* ensure above card content */
+  z-index: 20;
+  pointer-events:none;
 }
+
 
 body.dark .avatar{
   border-color:#020617;
@@ -350,7 +350,7 @@ body.dark #easterEgg{
 
 <!-- CARD 0 – YOU / FOUNDER + FUN FACTS + EASTER EGG -->
 <div id="c0" class="card">
-  <div class="card-img" style="background:linear-gradient(135deg,#ff7fd2,#ff3fad);">
+  <div class="card-img" style="background:linear-gradient(135deg,#ff7fd2,#ff3fad); height:50%;">
     <div class="avatar">MR</div>
   </div>
   <div class="card-content">
