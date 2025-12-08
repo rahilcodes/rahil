@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>rahil.creativals</title>
 
 <style>
@@ -12,41 +11,6 @@
   padding:0;
   box-sizing:border-box;
 }
-
-.voice-btn{
-  position:absolute;
-  top:14px;
-  right:14px;
-  z-index:30;
-  width:38px;
-  height:38px;
-  border-radius:999px;
-  background:rgba(255,255,255,0.35);
-  backdrop-filter:blur(10px);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.2rem;
-  cursor:pointer;
-  box-shadow:0 6px 16px rgba(0,0,0,0.25);
-  transition:background .25s ease, transform .15s ease;
-}
-
-.voice-btn:hover{
-  background:rgba(255,255,255,0.55);
-  transform:translateY(-2px);
-}
-
-/* dark mode */
-body.dark .voice-btn{
-  background:rgba(0,0,0,0.4);
-  color:#fff;
-}
-body.dark .voice-btn:hover{
-  background:rgba(0,0,0,0.6);
-}
-
-
 body{
   background:#6666ff;
   overflow:hidden;
@@ -394,12 +358,7 @@ body.dark #easterEgg{
 
 <!-- CARD 0 – YOU / FOUNDER + FUN FACTS + EASTER EGG -->
 <div id="c0" class="card">
-<div class="card-content"
- data-narration="Hello, my name is Mohammed Rahil Azeez, Founder and CEO of Creativals. I build digital brands, systems and scalable operations with my amazing team.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
-
+  <div class="card-content">
     <span class="chip">Founder • CEO • Strategist</span>
     <h2 id="founderName">Mohammed Rahil Azeez</h2>
     <p class="tagline">Digital growth partner for global brands.</p>
@@ -427,11 +386,7 @@ body.dark #easterEgg{
 <!-- CARD 1 – CREATIVALS INTRO -->
 <div id="c1" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#7f7fff,#4f4fff);"></div>
- <div class="card-content"
- data-narration="Welcome to Creativals, a global digital agency helping brands scale through systems, automation and world class design.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Agency Overview</span>
     <h2>Welcome to Creativals</h2>
     <p class="tagline">We don’t just design brands. We build growth systems.</p>
@@ -451,11 +406,7 @@ body.dark #easterEgg{
 <!-- CARD 2 – SERVICES / WHAT WE DO -->
 <div id="c2" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#6affa1,#3edd72);"></div>
- <div class="card-content"
- data-narration="At Creativals, we build branding, websites, funnels, performance marketing campaigns and automation systems designed for serious growth.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Services</span>
     <h2>What We Do at Creativals</h2>
     <p>
@@ -478,11 +429,7 @@ body.dark #easterEgg{
 <!-- CARD 3 – COUNTRIES WE SERVE -->
 <div id="c3" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#ffa16a,#ff7534);"></div>
- <div class="card-content"
- data-narration="Creativals works with founders and teams in the United States, Canada, the United Kingdom, United Arab Emirates, Malaysia, Australia, Guyana and India.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Global Presence</span>
     <h2>Countries We Serve</h2>
     <p>
@@ -505,11 +452,7 @@ body.dark #easterEgg{
 <!-- CARD 4 – INDUSTRIES -->
 <div id="c4" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#9d6aff,#742fff);"></div>
- <div class="card-content"
- data-narration="We work with technology companies, ecommerce businesses, education brands, healthcare, real estate and serious service providers looking for scale.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Industries</span>
     <h2>Who We Work With</h2>
     <p>
@@ -532,11 +475,7 @@ body.dark #easterEgg{
 <!-- CARD 5 – CLIENTS & MINI CASE STUDY -->
 <div id="c5" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#6affff,#33c8c8);"></div>
- <div class="card-content"
- data-narration="Creativals has worked with more than three hundred brands delivering growth, conversions, automation and real improvement in revenue performance.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Clients & Results</span>
     <h2>300+ Clients, Real Outcomes</h2>
     <p>
@@ -558,11 +497,7 @@ body.dark #easterEgg{
 <!-- CARD 6 – WHY CREATIVALS / WHY BRANDS FAIL -->
 <div id="c6" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#faff6a,#d4c838);"></div>
-  <div class="card-content"
- data-narration="Most brands fail because they don't have systems. We fix positioning, marketing alignment, automation, funnels and delivery consistency.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Strategy</span>
     <h2>Why Brands Fail & How We Fix It</h2>
     <p>
@@ -588,11 +523,7 @@ body.dark #easterEgg{
 <!-- CARD 7 – AI & SYSTEMS FOCUS -->
 <div id="c7" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#ff9fff,#ff66ff);"></div>
-  <div class="card-content"
- data-narration="We use artificial intelligence, automation and operational systems to reduce manual work, remove chaos and scale brand performance globally.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">AI • Automation • Systems</span>
     <h2>AI-Powered, System-Driven</h2>
     <p>
@@ -613,11 +544,7 @@ body.dark #easterEgg{
 <!-- CARD 8 – CONTACT / WORK WITH US -->
 <div id="c8" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#6aa2ff,#3f7fff);"></div>
- <div class="card-content"
- data-narration="If you are a founder, CEO or marketer and want growth, automation and branding that actually moves business forward, contact me directly through email, LinkedIn or WhatsApp.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Let’s Work Together</span>
     <h2>Work With Rahil & Creativals</h2>
     <p>
@@ -656,11 +583,7 @@ body.dark #easterEgg{
 <!-- CARD 9 – THANK YOU / CLOSING -->
 <div id="c9" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#ff6aff,#ff2fff);"></div>
- <div class="card-content"
- data-narration="Thank you for exploring my story and Creativals. I look forward to building meaningful digital systems and long lasting brand value together.">
-
-<button class="voice-btn" onclick="toggleSpeak(this, event)">🔊</button>
-
+  <div class="card-content">
     <span class="chip">Thank You</span>
     <h2>Thanks for Exploring Creativals</h2>
     <p>
@@ -754,36 +677,27 @@ setInterval(()=>{
   setTimeout(()=>e.remove(),4000);
 },8000);
 
+/* MAIN RENDER FUNCTION */
 function updateCards(){
   cards.forEach((c,i)=>{
-
-    // remove arrow buttons (we add them again on active card)
     c.querySelectorAll(".btn").forEach(b=>b.remove());
 
-    /* ---------------------------------
-       cards BEFORE current one
-    -----------------------------------*/
     if(i < current){
-      c.style.transition = "transform .35s ease, opacity .35s ease";
+      // cards that are already passed
       c.style.transform = "translateX(-120vw)";
       c.style.opacity = "0";
-      c.style.zIndex = 1;
-      return;
+      c.classList.remove("active");
     }
-
-    /* ---------------------------------
-       ACTIVE CARD
-    -----------------------------------*/
-    if(i === current){
-      c.style.transition = "transform .35s ease, opacity .35s ease";
+    else if(i === current){
+      // active card
       c.style.transform = "translateX(0)";
       c.style.opacity = "1";
-      c.style.zIndex = 50;
+      c.style.zIndex = 10;
 
       typeTitle(c);
       activateCard(c);
 
-      // left arrow (not first card)
+      // left arrow (not on first card)
       if(current > 0){
         const leftBtn = document.createElement("div");
         leftBtn.className = "btn left";
@@ -792,7 +706,7 @@ function updateCards(){
         c.appendChild(leftBtn);
       }
 
-      // right arrow (not last card)
+      // right arrow (not on last card)
       if(current < cards.length-1){
         const rightBtn = document.createElement("div");
         rightBtn.className = "btn right";
@@ -801,26 +715,25 @@ function updateCards(){
         c.appendChild(rightBtn);
       }
 
-      // AI sound
+      // AI card special sound
       if(current === 7) playNavSound('ai');
 
       // confetti on last card
       if(current === cards.length-1) showConfetti();
 
-      return;
+    } else {
+      // cards ahead (stacked)
+      let offset = (i - current) * 10;
+      let scale  = 1 - (i - current) * 0.03;
+      let opacity = 1 - (i - current) * 0.15;
+      c.style.transform = `translateY(${offset}px) scale(${scale})`;
+      c.style.opacity = opacity;
+      c.style.zIndex = 5 - i;
+      c.classList.remove("active");
     }
-
-
-    /* ---------------------------------
-       CARDS AFTER CURRENT (stacked)
-    -----------------------------------*/
-    let depth = (i - current);
-    c.style.transition = "transform .35s ease, opacity .35s ease";
-    c.style.transform = `translateX(120vw) scale(${1 - depth*0.02})`;
-    c.style.opacity = 0.2;
-    c.style.zIndex = 5 - depth;
   });
 }
+
 /* NAV HELPERS FOR INTERNAL CTA BUTTONS */
 function goToCard(index){
   if(index >= 0 && index < cards.length){
@@ -851,11 +764,8 @@ function prevCard(){
   }
 }
 
-
 /* DESKTOP CLICK (LEFT / RIGHT SIDE) */
 document.addEventListener("click",(e)=>{
-   if(justSwiped) return;
-  
   if(
     e.target.classList.contains("btn") ||
     e.target.classList.contains("btn-cta") ||
@@ -867,7 +777,7 @@ document.addEventListener("click",(e)=>{
 });
 
 /* --- PHYSICS SWIPE --------------------------------------- */
-let justSwiped = false;
+
 let dragging = false;
 let dragStartX = 0;
 let dragOffset = 0;
@@ -904,8 +814,7 @@ document.addEventListener("touchmove",(e)=>{
 
 document.addEventListener("touchend",(e)=>{
   dragging = false;
-  justSwiped = true;
-setTimeout(()=>justSwiped=false,150);
+  
   // apply inertia
   let momentum = dragOffset + dragVelocity * 200;
   
@@ -959,80 +868,41 @@ if(founderName){
   });
 }
 
-/* ===== OPTIONAL PARALLAX (DESKTOP ONLY) ===== */
+/* PARALLAX PARTICLES + 3D TILT */
+document.addEventListener("mousemove",(e)=>{
+  const card = cards[current];
+  if(card){
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width/2);
+    const y = e.clientY - (rect.top + rect.height/2);
+    const rotateX = (-y / rect.height) * 8;
+    const rotateY = (x / rect.width) * 8;
+    card.style.transform = `translateX(0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  }
 
-if(window.innerWidth > 900){
-  document.addEventListener("mousemove",(e)=>{
-    const card = cards[current];
-    if(card){
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - (rect.left + rect.width/2);
-      const y = e.clientY - (rect.top + rect.height/2);
-      const rotateX = (-y / rect.height) * 6;
-      const rotateY = (x / rect.width) * 6;
-      card.style.transform = `translateX(0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    }
+  const px = (e.clientX / window.innerWidth - 0.5) * 20;
+  const py = (e.clientY / window.innerHeight - 0.5) * 20;
+  document.querySelectorAll(".particles span").forEach((p,i)=>{
+    const speed = (i+1)*0.03;
+    p.style.transform = `translate(${px*speed}px, ${py*speed}px)`;
   });
+});
 
-  document.addEventListener("mouseleave",()=>{
-    const card = cards[current];
-    if(card) card.style.transform = "translateX(0)";
-  });
-}
+/* Reset tilt on mouse leave window */
+document.addEventListener("mouseleave",()=>{
+  const card = cards[current];
+  if(!card) return;
+  card.style.transform = "translateX(0)";
+});
 
 /* INITIAL RENDER */
 updateCards();
-
-
-/* ----speech global---- */
-let utter=null;
-let playing=false;
-
-function toggleSpeak(btn, event){
-  if(event) event.stopPropagation();
-  const card=btn.closest(".card-content");
-  const text=card.getAttribute("data-narration");
-
-  // stop if already speaking
-  if(playing){
-    speechSynthesis.pause();
-    playing=false;
-    btn.textContent="🔊";
-    return;
-  }
-
-  // resume if paused
-  if(speechSynthesis.paused){
-    speechSynthesis.resume();
-    playing=true;
-    btn.textContent="⏸";
-    return;
-  }
-
-  speechSynthesis.cancel();
-  utter=new SpeechSynthesisUtterance(text);
-
-  // male voice selection
-  let voices=speechSynthesis.getVoices();
-  let male=voices.find(v=>v.name.toLowerCase().includes("male") && v.lang.startsWith("en"));
-  if(male) utter.voice=male;
-
-  utter.rate=1.03;
-  utter.pitch=.95;
-
-  utter.onend=()=>{
-    playing=false;
-    btn.textContent="🔊";
-  };
-
-  playing=true;
-  btn.textContent="⏸";
-  speechSynthesis.speak(utter);
-}
-
-window.speechSynthesis.onvoiceschanged = () => {};
-
 </script>
 
 </body>
 </html>
+
+
+
+
+this is my final code now tell me how can i make a business out of it
