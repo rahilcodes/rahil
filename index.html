@@ -406,7 +406,7 @@ body.dark #easterEgg{
     <p>
       I’m the Founder & CEO of <b>Creativals</b>, a global branding & digital agency
       built with my siblings and closest friends. I focus on vision, systems,
-      and high-level strategy while my team executes with speed and precision..
+      and high-level strategy while my team executes with speed and precision....
     </p>
     <p class="subheading">Fun facts about me:</p>
     <ul>
@@ -821,8 +821,6 @@ function updateCards(){
     c.style.zIndex = 5 - depth;
   });
 }
-
-
 /* NAV HELPERS FOR INTERNAL CTA BUTTONS */
 function goToCard(index){
   if(index >= 0 && index < cards.length){
@@ -846,22 +844,9 @@ function nextCard(){
 
 function prevCard(){
   if(current > 0){
-    let old = current;
     current--;
-
     playNavSound('prev');
-
-    // animate old card to the right
-    cards[old].style.transition = "transform .35s ease";
-    cards[old].style.transform = "translateX(120vw)";
-
-    // bring previous card from left
-    cards[current].style.transition = "transform .35s ease";
-    cards[current].style.transform = "translateX(-120vw)";
-    
-    setTimeout(()=>{
-      updateCards();
-    }, 60);
+    updateCards();
     hideSwipeHint();
   }
 }
