@@ -155,36 +155,13 @@ body.dark .swipe-hint{
 
 /* TOP IMAGE / GRADIENT AREA */
 .card-img{
+  width:100%;
+  height:48%;
+  background-size:cover;
+  background-position:center;
   position:relative;
-  overflow:visible!important;
 }
 
-
-/* AVATAR ON FIRST CARD */
-.avatar{
-  position:absolute;
-  bottom:-28px;  /* moves it into content visually */
-  left:20px;
-  width:56px;
-  height:56px;
-  border-radius:999px;
-  background:linear-gradient(135deg,#0f172a,#1d4ed8);
-  border:3px solid #ffffff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  font-size:1rem;
-  color:#e5e7eb;
-  box-shadow:0 8px 20px rgba(15,23,42,0.55);
-  z-index: 20;
-  pointer-events:none;
-}
-
-
-body.dark .avatar{
-  border-color:#020617;
-}
 
 /* CONTENT AREA */
 .card-content{
@@ -198,11 +175,10 @@ body.dark .avatar{
 .card-content h2{
   font-size:1.6rem;
   margin-bottom:4px;
-  white-space:normal!important;
   overflow:hidden;
-  word-break:break-word;
+  white-space:normal;
+  word-wrap:break-word;
 }
-
 
 /* FUN FACTS SMALL HEADING */
 .subheading{
@@ -350,9 +326,7 @@ body.dark #easterEgg{
 
 <!-- CARD 0 – YOU / FOUNDER + FUN FACTS + EASTER EGG -->
 <div id="c0" class="card">
-  <div class="card-img" style="background:linear-gradient(135deg,#ff7fd2,#ff3fad); height:50%;">
-    <div class="avatar">MR</div>
-  </div>
+
   <div class="card-content">
     <span class="chip">Founder • CEO • Strategist</span>
     <h2 id="founderName">Mohammed Rahil Azeez</h2>
