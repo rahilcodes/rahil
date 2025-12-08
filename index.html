@@ -766,18 +766,64 @@ document.addEventListener("click",(e)=>{
   else prevCard();
 });
 
-/* TOUCH SWIPE */
+/* --- PHYSICS SWIPE --------------------------------------- */
+
+let dragging = false;
+let dragStartX = 0;
+let dragOffset = 0;
+let dragVelocity = 0;
+let lastX = 0;
+let lastTime = 0;
+
 document.addEventListener("touchstart",(e)=>{
-  startX = e.touches[0].clientX;
+  dragging = true;
+  dragStartX = e.touches[0].clientX;
+  lastX = dragStartX;
+  lastTime = Date.now();
 });
+
 document.addEventListener("touchmove",(e)=>{
-  currentX = e.touches[0].clientX - startX;
+  if(!dragging) return;
+  
+  const x = e.touches[0].clientX;
+  
+  dragOffset = x - dragStartX;
+  
+  // card follows finger
+  cards[current].style.transition = "none";
+  cards[current].style.transform = `translateX(${dragOffset}px)`;
+  
+  // calculate velocity
+  let now = Date.now();
+  let dx = x - lastX;
+  let dt = now - lastTime;
+  dragVelocity = dx / dt;
+  lastX = x;
+  lastTime = now;
 });
+
 document.addEventListener("touchend",(e)=>{
-  if(currentX < -50) nextCard();
-  if(currentX > 50) prevCard();
-  currentX = 0;
+  dragging = false;
+  
+  // apply inertia
+  let momentum = dragOffset + dragVelocity * 200;
+  
+  // threshold
+  if(momentum < -120) {
+    nextCard();
+  }
+  else if(momentum > 120){
+    prevCard();
+  } else {
+    resetCard();
+  }
 });
+
+function resetCard(){
+  cards[current].style.transition = "transform .3s ease";
+  cards[current].style.transform = "translateX(0)";
+}
+
 
 /* DARK MODE TOGGLE */
 const themeToggle = document.getElementById("themeToggle");
