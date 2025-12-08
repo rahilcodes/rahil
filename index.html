@@ -11,6 +11,41 @@
   padding:0;
   box-sizing:border-box;
 }
+
+.voice-btn{
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:30;
+  width:38px;
+  height:38px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.35);
+  backdrop-filter:blur(10px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.2rem;
+  cursor:pointer;
+  box-shadow:0 6px 16px rgba(0,0,0,0.25);
+  transition:background .25s ease, transform .15s ease;
+}
+
+.voice-btn:hover{
+  background:rgba(255,255,255,0.55);
+  transform:translateY(-2px);
+}
+
+/* dark mode */
+body.dark .voice-btn{
+  background:rgba(0,0,0,0.4);
+  color:#fff;
+}
+body.dark .voice-btn:hover{
+  background:rgba(0,0,0,0.6);
+}
+
+
 body{
   background:#6666ff;
   overflow:hidden;
@@ -358,7 +393,12 @@ body.dark #easterEgg{
 
 <!-- CARD 0 – YOU / FOUNDER + FUN FACTS + EASTER EGG -->
 <div id="c0" class="card">
-  <div class="card-content">
+<div class="card-content"
+ data-narration="Hello, my name is Mohammed Rahil Azeez, Founder and CEO of Creativals. I build digital brands, systems and scalable operations with my amazing team.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
+
     <span class="chip">Founder • CEO • Strategist</span>
     <h2 id="founderName">Mohammed Rahil Azeez</h2>
     <p class="tagline">Digital growth partner for global brands.</p>
@@ -386,7 +426,11 @@ body.dark #easterEgg{
 <!-- CARD 1 – CREATIVALS INTRO -->
 <div id="c1" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#7f7fff,#4f4fff);"></div>
-  <div class="card-content">
+ <div class="card-content"
+ data-narration="Welcome to Creativals, a global digital agency helping brands scale through systems, automation and world class design.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Agency Overview</span>
     <h2>Welcome to Creativals</h2>
     <p class="tagline">We don’t just design brands. We build growth systems.</p>
@@ -406,7 +450,11 @@ body.dark #easterEgg{
 <!-- CARD 2 – SERVICES / WHAT WE DO -->
 <div id="c2" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#6affa1,#3edd72);"></div>
-  <div class="card-content">
+ <div class="card-content"
+ data-narration="At Creativals, we build branding, websites, funnels, performance marketing campaigns and automation systems designed for serious growth.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Services</span>
     <h2>What We Do at Creativals</h2>
     <p>
@@ -429,7 +477,11 @@ body.dark #easterEgg{
 <!-- CARD 3 – COUNTRIES WE SERVE -->
 <div id="c3" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#ffa16a,#ff7534);"></div>
-  <div class="card-content">
+ <div class="card-content"
+ data-narration="Creativals works with founders and teams in the United States, Canada, the United Kingdom, United Arab Emirates, Malaysia, Australia, Guyana and India.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Global Presence</span>
     <h2>Countries We Serve</h2>
     <p>
@@ -452,7 +504,11 @@ body.dark #easterEgg{
 <!-- CARD 4 – INDUSTRIES -->
 <div id="c4" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#9d6aff,#742fff);"></div>
-  <div class="card-content">
+ <div class="card-content"
+ data-narration="We work with technology companies, ecommerce businesses, education brands, healthcare, real estate and serious service providers looking for scale.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Industries</span>
     <h2>Who We Work With</h2>
     <p>
@@ -475,7 +531,11 @@ body.dark #easterEgg{
 <!-- CARD 5 – CLIENTS & MINI CASE STUDY -->
 <div id="c5" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#6affff,#33c8c8);"></div>
-  <div class="card-content">
+ <div class="card-content"
+ data-narration="Creativals has worked with more than three hundred brands delivering growth, conversions, automation and real improvement in revenue performance.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Clients & Results</span>
     <h2>300+ Clients, Real Outcomes</h2>
     <p>
@@ -497,7 +557,11 @@ body.dark #easterEgg{
 <!-- CARD 6 – WHY CREATIVALS / WHY BRANDS FAIL -->
 <div id="c6" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#faff6a,#d4c838);"></div>
-  <div class="card-content">
+  <div class="card-content"
+ data-narration="Most brands fail because they don't have systems. We fix positioning, marketing alignment, automation, funnels and delivery consistency.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Strategy</span>
     <h2>Why Brands Fail & How We Fix It</h2>
     <p>
@@ -523,7 +587,11 @@ body.dark #easterEgg{
 <!-- CARD 7 – AI & SYSTEMS FOCUS -->
 <div id="c7" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#ff9fff,#ff66ff);"></div>
-  <div class="card-content">
+  <div class="card-content"
+ data-narration="We use artificial intelligence, automation and operational systems to reduce manual work, remove chaos and scale brand performance globally.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">AI • Automation • Systems</span>
     <h2>AI-Powered, System-Driven</h2>
     <p>
@@ -544,7 +612,11 @@ body.dark #easterEgg{
 <!-- CARD 8 – CONTACT / WORK WITH US -->
 <div id="c8" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#6aa2ff,#3f7fff);"></div>
-  <div class="card-content">
+ <div class="card-content"
+ data-narration="If you are a founder, CEO or marketer and want growth, automation and branding that actually moves business forward, contact me directly through email, LinkedIn or WhatsApp.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Let’s Work Together</span>
     <h2>Work With Rahil & Creativals</h2>
     <p>
@@ -583,7 +655,11 @@ body.dark #easterEgg{
 <!-- CARD 9 – THANK YOU / CLOSING -->
 <div id="c9" class="card">
   <div class="card-img" style="background:linear-gradient(135deg,#ff6aff,#ff2fff);"></div>
-  <div class="card-content">
+ <div class="card-content"
+ data-narration="Thank you for exploring my story and Creativals. I look forward to building meaningful digital systems and long lasting brand value together.">
+
+ <button class="voice-btn" onclick="toggleSpeak(this)">🔊</button>
+
     <span class="chip">Thank You</span>
     <h2>Thanks for Exploring Creativals</h2>
     <p>
@@ -897,6 +973,55 @@ document.addEventListener("mouseleave",()=>{
 
 /* INITIAL RENDER */
 updateCards();
+
+
+/* ----speech global---- */
+let utter=null;
+let playing=false;
+
+function toggleSpeak(btn){
+  const card=btn.closest(".card-content");
+  const text=card.getAttribute("data-narration");
+
+  // stop if already speaking
+  if(playing){
+    speechSynthesis.pause();
+    playing=false;
+    btn.textContent="🔊";
+    return;
+  }
+
+  // resume if paused
+  if(speechSynthesis.paused){
+    speechSynthesis.resume();
+    playing=true;
+    btn.textContent="⏸";
+    return;
+  }
+
+  speechSynthesis.cancel();
+  utter=new SpeechSynthesisUtterance(text);
+
+  // male voice selection
+  let voices=speechSynthesis.getVoices();
+  let male=voices.find(v=>v.name.toLowerCase().includes("male") && v.lang.startsWith("en"));
+  if(male) utter.voice=male;
+
+  utter.rate=1.03;
+  utter.pitch=.95;
+
+  utter.onend=()=>{
+    playing=false;
+    btn.textContent="🔊";
+  };
+
+  playing=true;
+  btn.textContent="⏸";
+  speechSynthesis.speak(utter);
+}
+
+window.speechSynthesis.onvoiceschanged = () => {};
+
 </script>
 
 </body>
