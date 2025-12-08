@@ -971,32 +971,26 @@ if(founderName){
   });
 }
 
-/* PARALLAX PARTICLES + 3D TILT */
-document.addEventListener("mousemove",(e)=>{
-  const card = cards[current];
-  if(card){
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - (rect.left + rect.width/2);
-    const y = e.clientY - (rect.top + rect.height/2);
-    const rotateX = (-y / rect.height) * 8;
-    const rotateY = (x / rect.width) * 8;
-    card.style.transform = `translateX(0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  }
+/* ===== OPTIONAL PARALLAX (DESKTOP ONLY) ===== */
 
-  const px = (e.clientX / window.innerWidth - 0.5) * 20;
-  const py = (e.clientY / window.innerHeight - 0.5) * 20;
-  document.querySelectorAll(".particles span").forEach((p,i)=>{
-    const speed = (i+1)*0.03;
-    p.style.transform = `translate(${px*speed}px, ${py*speed}px)`;
+if(window.innerWidth > 900){
+  document.addEventListener("mousemove",(e)=>{
+    const card = cards[current];
+    if(card){
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - (rect.left + rect.width/2);
+      const y = e.clientY - (rect.top + rect.height/2);
+      const rotateX = (-y / rect.height) * 6;
+      const rotateY = (x / rect.width) * 6;
+      card.style.transform = `translateX(0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    }
   });
-});
 
-/* Reset tilt on mouse leave window */
-document.addEventListener("mouseleave",()=>{
-  const card = cards[current];
-  if(!card) return;
-  card.style.transform = "translateX(0)";
-});
+  document.addEventListener("mouseleave",()=>{
+    const card = cards[current];
+    if(card) card.style.transform = "translateX(0)";
+  });
+}
 
 /* INITIAL RENDER */
 updateCards();
