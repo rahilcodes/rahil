@@ -406,7 +406,7 @@ body.dark #easterEgg{
     <p>
       I’m the Founder & CEO of <b>Creativals</b>, a global branding & digital agency
       built with my siblings and closest friends. I focus on vision, systems,
-      and high-level strategy while my team executes with speed and precision....
+      and high-level strategy while my team executes with speed and precision.
     </p>
     <p class="subheading">Fun facts about me:</p>
     <ul>
@@ -854,6 +854,8 @@ function prevCard(){
 
 /* DESKTOP CLICK (LEFT / RIGHT SIDE) */
 document.addEventListener("click",(e)=>{
+   if(justSwiped) return;
+  
   if(
     e.target.classList.contains("btn") ||
     e.target.classList.contains("btn-cta") ||
@@ -865,7 +867,7 @@ document.addEventListener("click",(e)=>{
 });
 
 /* --- PHYSICS SWIPE --------------------------------------- */
-
+let justSwiped = false;
 let dragging = false;
 let dragStartX = 0;
 let dragOffset = 0;
@@ -902,7 +904,8 @@ document.addEventListener("touchmove",(e)=>{
 
 document.addEventListener("touchend",(e)=>{
   dragging = false;
-  
+  justSwiped = true;
+setTimeout(()=>justSwiped=false,150);
   // apply inertia
   let momentum = dragOffset + dragVelocity * 200;
   
