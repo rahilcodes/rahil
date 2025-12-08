@@ -192,11 +192,10 @@ body.dark .swipe-hint{
   text-shadow:0 1px 3px rgba(0,0,0,0.7);
 }
 
-/* CARD BASE (GLASSMORPHISM + NEON EDGE) */
 .card{
   width:90vw;
   height:80vh;
-  background:rgba(255,255,255,0.82);
+  background:#ffffff;   /* always white */
   color:#000;
   display:flex;
   flex-direction:column;
@@ -208,9 +207,9 @@ body.dark .swipe-hint{
   overflow:hidden;
   box-shadow:0 16px 40px rgba(0,0,0,0.25);
   transform-style:preserve-3d;
-  backdrop-filter:blur(18px);
-  border:1px solid rgba(148,163,253,0.35);
+  border:1px solid rgba(148,163,253,0.25); /* keep your neon effect */
 }
+
 .card::before{
   content:"";
   position:absolute;
@@ -245,7 +244,9 @@ body.dark .swipe-hint{
   height:48%;
   background-size:cover;
   background-position:center;
-  position:relative;
+  border-top-left-radius:20px;
+  border-top-right-radius:20px;
+  overflow:hidden;
 }
 
 /* CONTENT AREA */
@@ -669,6 +670,23 @@ function vibrateSmall(){
   }
 }
 
+
+/* --- Swipe inertia physics --- */
+function applyInertia(card, velocity){
+  let v = velocity;
+  const friction = 0.92;
+  const step = ()=>{
+    card.style.transform = `translateX(${v}px)`;
+    v *= friction;
+    if(Math.abs(v) > 1){
+      requestAnimationFrame(step);
+    } else {
+      updateCards(); // snap to correct position
+    }
+  };
+  step();
+}
+
 /* AUDIO: SIMPLE NAV SOUND USING WEB AUDIO */
 let audioCtx = null;
 function playNavSound(dir){
@@ -884,10 +902,18 @@ document.addEventListener("touchmove",(e)=>{
   currentX = e.touches[0].clientX - startX;
 });
 document.addEventListener("touchend",(e)=>{
-  if(currentX < -50) nextCard();
-  if(currentX > 50) prevCard();
+  if(currentX < -50){
+    nextCard();
+  } else if(currentX > 50){
+    prevCard();
+  } else {
+    // inertia
+    const card = cards[current];
+    applyInertia(card, currentX * 0.4);
+  }
   currentX = 0;
 });
+
 
 /* DARK MODE TOGGLE */
 const themeToggle = document.getElementById("themeToggle");
